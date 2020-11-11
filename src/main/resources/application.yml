@@ -1,0 +1,12 @@
+contacts:
+    name: Anurag
+    password: test@123
+    emailId: anu.drumcoder@gmail.com
+    phone: 785-704-5809
+
+---
+spring:
+    profile: Dev
+
+contacts:
+    emailId: Dev-anu.drumcoder@gmail.com
