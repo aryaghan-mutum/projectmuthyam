@@ -1,4 +1,4 @@
-package com.projectmuthyam;
+package com.projectmuthyam.pojo;
 
 import lombok.Data;
 

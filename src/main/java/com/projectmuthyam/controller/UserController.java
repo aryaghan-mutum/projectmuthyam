@@ -1,12 +1,18 @@
-package com.projectmuthyam;
+package com.projectmuthyam.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @RestController
-public class MyController {
+@RequestMapping("/examples/v1/users")
+public class UserController {
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String welcomeMsg() {
@@ -18,9 +24,16 @@ public class MyController {
         return "welcome to my ABOUT page 2!";
     }
 
-    @RequestMapping(value = "/getUser", method = {RequestMethod.GET, RequestMethod.POST})
-    public String getUser(@RequestParam(value = "myName") String name) {
+    @RequestMapping(value = "", method = {RequestMethod.GET})
+    public List getUserName() {
+        Map usersMap = new HashMap<>();
+        usersMap.put("Name1", "Anura");
+        usersMap.put("Name2", "Rag");
+        usersMap.put("Name3", "Sang");
 
-        return "Welcome " + name;
+        List usersList = new ArrayList<>();
+        usersList.add(usersMap);
+
+        return usersList;
     }
 }
